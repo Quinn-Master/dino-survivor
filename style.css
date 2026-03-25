@@ -1,37 +1,62 @@
-/* Fond général */
-body {
-    margin: 0;
-    background: #eaeaea;
-    font-family: Arial, sans-serif;
+:root{
+  --bg:#f7f7f7;
+  --ground:#e9e9e9;
+  --accent:#222;
+  --hud-bg:rgba(255,255,255,0.7);
+  --btn-bg:#fff;
 }
-
-/* Zone du jeu */
-#game {
-    width: 900px;
-    height: 300px;
-    margin: 40px auto;
-    background: white;
-    border: 3px solid #333;
-    position: relative;
-    overflow: hidden;
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(#fff,#f0f0f0);
+  font-family:Inter,system-ui,Arial,sans-serif;
+  color:var(--accent);
+  padding:20px;
 }
-
-/* Sol */
-#ground {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 25px;
-    background: #444;
+#game{width:900px;max-width:95%;position:relative}
+canvas{
+  display:block;
+  width:100%;
+  height:auto;
+  background:var(--bg);
+  border:1px solid #ddd;
+  border-radius:6px;
+  image-rendering: pixelated;
 }
-
-/* Dino en position de départ */
-#dino {
-    position: absolute;
-    bottom: 25px; /* posé sur le sol */
-    left: 60px;
-    width: 50px;
-    height: 50px;
-    background: #2ecc71; /* vert pour bien le voir */
-    border-radius: 5px;
+#hud{
+  margin-top:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
+#hud .left{display:flex;gap:8px}
+#skinBtn, #restartBtn{
+  padding:6px 10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  background:var(--btn-bg);
+  cursor:pointer;
+  font-weight:600;
+}
+#score{
+  font-weight:700;
+  font-size:18px;
+  padding:6px 10px;
+  background:var(--hud-bg);
+  border-radius:6px;
+}
+#overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,0.85);
+  font-weight:700;
+  font-size:18px;
+  border-radius:6px;
+}
+.hidden{display:none}
