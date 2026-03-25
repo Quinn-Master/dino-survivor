@@ -1,23 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dino Runner - Base</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dino Survivor</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="game">
+    <canvas id="canvas" width="900" height="200" aria-label="Dino Survivor game"></canvas>
+    <div id="hud">
+      <div class="left">
+        <button id="skinBtn" type="button">Changer skin</button>
+        <button id="restartBtn" type="button">Restart</button>
+      </div>
+      <div class="right">
+        <span id="score">0</span>
+      </div>
+    </div>
+    <div id="overlay" class="hidden">Chargement des assets…</div>
+  </div>
 
-    <main id="game">
-        <div id="dino"></div>
-        <div id="ground"></div>
-    </main>
-
-    <!-- Sons (déjà prêts mais pas utilisés) -->
-    <audio id="jumpSound" src="jump.mp3"></audio>
-    <audio id="runSound" src="run.mp3" loop></audio>
-    <audio id="gameOverSound" src="gameover.mp3"></audio>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
